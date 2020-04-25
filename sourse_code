@@ -1,0 +1,124 @@
+//Felix
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Design_Display</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0px;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-image: linear-gradient(120deg, #3498db, #8e44ad);
+        }
+        
+        .login-form {
+            width: 360px;
+            background: #f1f1f1;
+            height: 580px;
+            padding: 80px 40px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .login-form h1 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .txtb {
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .txtb input {
+            border: none;
+            color: #333;
+            outline: none;
+            background: none;
+            width: 100%;
+            font-size: 15px;
+            padding: 0 5px;
+            height: 40px;
+        }
+        
+        .txtb span:before {
+            content: attr(data-placeholder);
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color: #addada;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .border {
+            border-bottom: 2px solid #3498db;
+            margin: 10px 0px;
+        }
+        
+        .logbtn {
+            display: block;
+            width: 100%;
+            font-size: 15px;
+            height: 40px;
+            cursor: pointer;
+            background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        
+        .logbtn:hover {
+            background-position: right top;
+        }
+        
+        .bottom-text {
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="login-form">
+        <h1>Login</h1>
+        <div class="txtb">
+            <input type="text" />
+            <span data-placeholder="Username"></span>
+        </div>
+        <div class="txtb">
+            <input type="password" />
+            <span data-placeholder="Password"></span>
+        </div>
+        <input type="submit" class="logbtn" value="login">
+        <div class="bottom-text">
+            Don't have account? <a href="#">Sign up</a>
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".txtb input").on("focus", function() {
+            $(this).addClass("border");
+        });
+        $(".txtb input").on("blur", function() {
+            $(this).removeClass("border");
+        });
+    });
+</script>
+
+</html>
